@@ -15,68 +15,14 @@ interface Props {
 
 export default ({ feed, hasBottomSeparator }: Props) => {
   return (
-    <Container style={box}>
+    <Container>
       {feed.items.map((item) => (
-        <Container key={item.guid} style={section}>
-          <Link style={anchor} href={item.link}>
+        <Container key={item.guid}>
+          <Link href={item.link}>
             {item.title}
           </Link>
         </Container>
       ))}
     </Container>
   )
-}
-
-const box = {
-  padding: '32px 32px 24px',
-}
-
-const header = {
-  color: '#212529',
-  fontFamily: 'system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif',
-  fontSize: '16px',
-  margin: 0,
-}
-
-const headerLink = {
-  color: '#212529',
-  textDecoration: 'underline',
-  textDecorationColor: '#1098ad',
-  textDecorationStyle: 'solid' as const,
-  textUnderlineOffset: '1px',
-}
-
-const section = {
-  margin: '32px 0',
-}
-
-const anchor = {
-  fontFamily: 'system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif',
-  color: '#095c6b',
-  fontSize: '20px',
-}
-
-const date = {
-  color: '#495057',
-  fontFamily: 'Dank Mono,Operator Mono,Inconsolata,Fira Mono,ui-monospace,SF Mono,Monaco,Droid Sans Mono,Source Code Pro,monospace',
-  fontSize: '12px',
-  margin: '0 0 8px',
-}
-
-const paragraph = {
-  color: '#495057',
-  fontFamily: 'system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif',
-  fontSize: '16px',
-  lineHeight: '24px',
-  margin: 0,
-}
-
-const blockquote = {
-  paddingLeft: '12px',
-  borderLeft: '2px solid #095c6b',
-}
-
-const hr = {
-  margin: '24px 0 0',
-  borderTopColor: '#dee2e6',
 }
