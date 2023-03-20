@@ -15,12 +15,14 @@ interface Props {
 
 export default ({ feed, hasBottomSeparator }: Props) => {
   return (
-    {feed.items.map((item) => (
-      <Container key={item.guid}>
-        <Link href={item.link}>
-          {item.title}
-        </Link>
-      </Container>
-    ))}
+    <Container>
+      {feed.items.map((item) => (
+        <Container key={item.guid}>
+          <Link href={item.link}>
+            {item.title}
+          </Link>
+        </Container>
+      ))}
+    </Container>
   )
 }
