@@ -26,16 +26,14 @@ export default function Email({ feeds, itemCount, actionUrl, from, initialRun }:
   return (
     <Html>
       <Section>
-        <Container>
-          {feeds.map((feed, i) => {
-            switch (feed.status) {
-              case 'fulfilled':
-                return <FeedSwitch key={feed.value.link} feed={feed.value} hasBottomSeparator={i < feeds.length - 1} />
-              case 'rejected':
-                return <Rejected key={feed.feed} feed={feed.feed} reason={feed.reason} />
-            }
-          })}
-        </Container>
+        {feeds.map((feed, i) => {
+          switch (feed.status) {
+            case 'fulfilled':
+              return <FeedSwitch key={feed.value.link} feed={feed.value} hasBottomSeparator={i < feeds.length - 1} />
+            case 'rejected':
+              return <Rejected key={feed.feed} feed={feed.feed} reason={feed.reason} />
+          }
+        })}
       </Section>
     </Html>
   )
