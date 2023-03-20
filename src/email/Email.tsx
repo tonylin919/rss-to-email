@@ -25,10 +25,8 @@ export default function Email({ feeds, itemCount, actionUrl, from, initialRun }:
 
   return (
     <Html>
-      <Head />
-      <Preview children={intro} />
-      <Section style={main}>
-        <Container style={container}>
+      <Section>
+        <Container>
           {feeds.map((feed, i) => {
             switch (feed.status) {
               case 'fulfilled':
@@ -41,32 +39,4 @@ export default function Email({ feeds, itemCount, actionUrl, from, initialRun }:
       </Section>
     </Html>
   )
-}
-
-const main = {
-  backgroundColor: '#f8f9fa',
-}
-
-const container = {
-  backgroundColor: '#fff',
-  margin: '0 auto',
-  padding: '0',
-}
-
-const section = {
-  color: '#495057',
-  fontFamily: 'Dank Mono,Operator Mono,Inconsolata,Fira Mono,ui-monospace,SF Mono,Monaco,Droid Sans Mono,Source Code Pro,monospace',
-  fontSize: '12px',
-  textAlign: 'center' as const,
-  margin: '0',
-  padding: '16px 48px',
-  backgroundColor: '#e9ecef',
-}
-
-const link = {
-  color: '#495057',
-  textDecoration: 'underline',
-  textDecorationColor: '#1098ad',
-  textDecorationStyle: 'solid' as const,
-  textUnderlineOffset: '1px',
 }
