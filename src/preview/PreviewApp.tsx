@@ -9,7 +9,7 @@ export default () => {
   return (
     <div className="container">
       <header>
-        <h1>RSS to Email</h1>
+        <h1>UptimeRobot</h1>
       </header>
 
       <div className={`preview preview-${previewSize}`}>
