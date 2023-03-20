@@ -29,8 +29,6 @@ export default function Email({ feeds, itemCount, actionUrl, from, initialRun }:
       <Preview children={intro} />
       <Section style={main}>
         <Container style={container}>
-          <Text style={section}>{intro}</Text>
-
           {feeds.map((feed, i) => {
             switch (feed.status) {
               case 'fulfilled':
@@ -39,12 +37,6 @@ export default function Email({ feeds, itemCount, actionUrl, from, initialRun }:
                 return <Rejected key={feed.feed} feed={feed.feed} reason={feed.reason} />
             }
           })}
-
-          <Text style={section}>
-            <Link style={link} href={actionUrl}>
-              {formatDate(new Date().toISOString())}
-            </Link>
-          </Text>
         </Container>
       </Section>
     </Html>
