@@ -16,25 +16,13 @@ interface Props {
 export default ({ feed, hasBottomSeparator }: Props) => {
   return (
     <Container style={box}>
-      <Text style={header}>
-        <Link style={headerLink} href={feed.link}>
-          {feed.title}
-        </Link>
-      </Text>
       {feed.items.map((item) => (
         <Container key={item.guid} style={section}>
           <Link style={anchor} href={item.link}>
             {item.title}
           </Link>
-          {item.pubDate && <Text style={date}>{formatDate(item.pubDate)}</Text>}
-          {item.content && <Summary href={item.link} paragraphStyle={paragraph} blockquoteStyle={{ ...paragraph, ...blockquote }} content={item.content} />}
         </Container>
       ))}
-      {hasBottomSeparator && (
-        <Section>
-          <Hr style={hr} />
-        </Section>
-      )}
     </Container>
   )
 }
