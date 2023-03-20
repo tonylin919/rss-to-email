@@ -1,10 +1,3 @@
 export const feeds = [
-  // Daring Fireball
-  'https://daringfireball.net/feeds/main',
-
-  // JakeArchibald.com
-  'https://jakearchibald.com/posts.rss',
-
-  // Appjeniksaan
-  'https://appjeniksaan.nl/feed.xml',
+  'https://rss.uptimerobot.com/u54533-dd79381fff82e448de15e4ff6cccca07'
 ]
