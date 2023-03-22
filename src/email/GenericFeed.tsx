@@ -16,7 +16,10 @@ interface Props {
 export default ({ feed, hasBottomSeparator }: Props) => {
   return (
     <Container>
-      {feed.items.map((item) => (
+      {feed.items
+        .filter((item) => item.title.includes("https://www.kratosdefense.com/"))
+        .filter((item) => item.title.includes("is DOWN"))
+        .map((item) => (
         <Container key={item.guid}>
           <Link href={item.link}>
             {item.title}
