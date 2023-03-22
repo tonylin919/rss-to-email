@@ -2,8 +2,6 @@
 
 This project sets up email updates based on RSS feeds.
 
-[Forked from bdevos / rss-to-email](https://github.com/bdevos/rss-to-email)
-
 ## Configuration
 
 [feeds.ts](src/feeds.ts) contains RSS feed(s)
