@@ -14,7 +14,7 @@ jobs:
     permissions: read-all
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@3df4ab11eba7bda6032a0b82a6bb43b11571feac # v4
 
       - name: Use Node.js
         uses: actions/setup-node@v3
@@ -41,7 +41,7 @@ jobs:
 
       - name: Send email
         if: steps.check_email.outputs.files_exists == 'true'
-        uses: dawidd6/action-send-mail@v3.7.2
+        uses: dawidd6/action-send-mail@v3.8.0
         with:
           server_address: ${{ vars.SMTP_SERVER }}
           server_port: ${{ vars.SMTP_PORT }}
